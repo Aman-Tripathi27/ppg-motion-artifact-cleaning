@@ -1,0 +1,4 @@
+# Python 3.13
+numpy==2.3.3
+scipy==1.16.2
+wfdb==4.3.1

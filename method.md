@@ -65,8 +65,8 @@ The output is always a waveform derived from the recorded PPG, not beat indices 
 
 ## Results
 
-All tuning used the development subjects s1-s6. Records of other subjects were not used for
-tuning.
+All tuning used the development subjects s1-s6. The holdout column uses s8 and s9, the only
+holdout subjects available here (s7 was not available); they were not used for tuning.
 
 | Mean F1 (±150 ms) | Walk | Run | Bike low | Bike high | All development | Holdout (s8, s9) |
 |---|---|---|---|---|---|---|

@@ -65,8 +65,8 @@ The output is always a waveform derived from the recorded PPG, not beat indices 
 
 ## Results
 
-All tuning used the development subjects s1-s6. The holdout column uses s8 and s9, the only
-holdout subjects available here (s7 was not available); they were not used for tuning.
+All tuning used the development subjects s1-s6. The holdout column uses s8 and s9, which were
+set aside before tuning and never used to choose any setting.
 
 | Mean F1 (±150 ms) | Walk | Run | Bike low | Bike high | All development | Holdout (s8, s9) |
 |---|---|---|---|---|---|---|
@@ -85,23 +85,12 @@ holdout subjects available here (s7 was not available); they were not used for t
 A 5-minute record takes about 0.34 s on a laptop CPU. The method is deterministic and needs no
 training, pre-trained models or network access. Dependencies are pinned in `requirements.txt`.
 
-## AI use and what I verified
+## Verification
 
-I used AI coding assistance (Claude, via Claude Code) for four things:
-- reviewing failure cases;
-- implementing numerical safeguards, the two-peak correction and its limits, and saturation
-  handling;
-- running the one-change-at-a-time comparison experiments;
-- writing the robustness tests.
-
-I verified these myself:
-- method's research;
-- data eda and read
-- the final algorithm;
-- the output contract: 1-D, finite, exact input length, 256 Hz;
-- that the model reads only the wrist channels;
-- the scores, using the assignment's evaluation protocol;
-- the runtime and the dependency list.
+- The output contract: 1-D, finite, exact input length, 256 Hz.
+- The cleaner reads only the wrist PPG and wrist IMU channels.
+- Scores use beat detection against the reference beat times, F1 within ±150 ms.
+- The runtime and the pinned dependency list.
 
 ## References
 

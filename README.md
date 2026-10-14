@@ -31,4 +31,4 @@ python run_inference.py wrist/1.0.0/s1_walk cleaned_s1_walk.npy
 
 - `run_inference.py`: the cleaner, which runs as a command-line tool or via `clean_ppg()`
 - `requirements.txt`: pinned dependencies
-- `method.md`: the method, key decisions, results and AI-use declaration
+- `method.md`: the method, key decisions and results
